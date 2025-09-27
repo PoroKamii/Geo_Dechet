@@ -1,0 +1,6 @@
+.env
+Data
+models
+.ruff_cache
+visuals
+docs

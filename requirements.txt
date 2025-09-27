@@ -1,0 +1,28 @@
+# Core Python
+numpy
+pandas
+
+# Visualisation
+matplotlib
+seaborn
+plotly
+
+# Machine Learning
+scikit-learn
+statsmodels
+xgboost
+
+# Web App / Déploiement
+streamlit
+fastapi
+uvicorn
+docker
+
+# Utils
+jupyter
+notebook
+tqdm
+python-dotenv
+
+# Optionnel (tests / qualité du code)
+ruff
