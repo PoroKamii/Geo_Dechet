@@ -1,5 +1,5 @@
 .env
-Data
+data
 models
 .ruff_cache
 visuals
