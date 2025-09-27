@@ -56,10 +56,9 @@ Une mauvaise anticipation entraîne des **surcoûts logistiques**, des **surchar
 ## 🛠️ Méthodologie
 1. **Exploration (EDA)** → corrélations, heatmaps, tendances.  
 2. **Feature engineering** → création et transformation de variables explicatives.  
-3. **Modélisation** :  
-   - Régression linéaire.  
-   - Lasso / Ridge.  
-   - RandomForest.  
+3. **Modélisation** :    
+   - Lasso  
+   - OLS statsmodels.  
 4. **Évaluation** → métriques (RMSE, R²).  
 5. **Déploiement** → application Python conteneurisée avec Docker.  
 
