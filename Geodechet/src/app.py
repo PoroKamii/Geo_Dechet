@@ -92,27 +92,27 @@ def read_csv_robust(
     return df
 
 
-# ========== Connexion S3 ==========
-def clean(s):
-    return (s or "").strip().replace("\r", "").replace("\n", "")
+# # ========== Connexion S3 ==========
+# def clean(s):
+#     return (s or "").strip().replace("\r", "").replace("\n", "")
 
 
-session = boto3.Session(
-    aws_access_key_id=clean(os.getenv("AWS_ACCESS_KEY_ID")),
-    aws_secret_access_key=clean(os.getenv("AWS_SECRET_ACCESS_KEY")),
-    region_name="eu-west-3",
-)
-s3 = session.client("s3", config=Config(signature_version="s3v4"))
-BUCKET = "mygeodechetbuckets3"
+# session = boto3.Session(
+#     aws_access_key_id=clean(os.getenv("AWS_ACCESS_KEY_ID")),
+#     aws_secret_access_key=clean(os.getenv("AWS_SECRET_ACCESS_KEY")),
+#     region_name="eu-west-3",
+# )
+# s3 = session.client("s3", config=Config(signature_version="s3v4"))
+# BUCKET = "mygeodechetbuckets3"
 
 # ========== Lecture des données ==========
 # df_dummies_2019.csv : UTF-8-SIG, séparateur virgule
-obj = s3.get_object(Bucket=BUCKET, Key="df_dummies_2019.csv")
+obj = "data/df_dummies_2019.csv"
 df = read_csv_robust(obj["Body"].read(), default_sep=",", try_utf8sig_first=True)
 df = df.drop(columns=["Unnamed: 0"], errors="ignore")
 
 # data_wip_v5.csv : UTF-8-SIG (actuel), séparateur point-virgule (si changé, le reader s'adapte)
-obj2 = s3.get_object(Bucket=BUCKET, Key="data_wip_v5.csv")
+obj2 = "data/data_wip_v5.csv"
 observed_df = read_csv_robust(
     obj2["Body"].read(), default_sep=";", try_utf8sig_first=True
 )
